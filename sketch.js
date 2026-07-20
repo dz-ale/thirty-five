@@ -1,3 +1,17 @@
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Zusätzlich sicherstellen, dass der Container bei jedem Laden oben startet
+window.addEventListener('load', () => {
+    const scrollContainer = document.querySelector('.scroll-container'); // oder wie dein Container heißt
+    if (scrollContainer) {
+        scrollContainer.scrollTop = 0;
+    }
+});
+
+
 let x;
 let r, g, b;
 let lastChange = 0;

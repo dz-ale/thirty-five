@@ -17,6 +17,46 @@ body {
     height: 100dvh;
 }
 
+.hint {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none;
+    animation:
+        pulse 2s ease-in-out 4,
+        fadeOut 1s ease-in-out 4s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-4px);
+    }
+}
+
+
 #content {
     height: 100vh;
     background-color: rgb(233, 95, 35);
@@ -75,7 +115,7 @@ body {
 
 
 #feier-button:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(-50%) scale(1.05);
 }
 
 
@@ -131,7 +171,7 @@ h1 {
 
 
 
-.intro { 
+.intro {
     margin-bottom: 1rem;
 
 }
@@ -183,7 +223,7 @@ img {
 }
 
 .date {
-    border-radius: 1rem; 
+    border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(139, 153, 74, 0.3);
     padding: 1rem;
 }
@@ -194,7 +234,7 @@ img {
 }
 
 .date-value {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .button {
@@ -209,7 +249,7 @@ img {
 
 a {
     text-decoration: none;
-    color: black; 
+    color: black;
 }
 
 .button:hover {
@@ -221,14 +261,15 @@ a {
 .love {
     margin-bottom: 2rem;
     padding-top: 1rem;
-     background-color: #ffc6ff;
+    background-color: #ffc6ff;
     color: #333;
     padding: 20px;
     border-radius: 1rem;
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
     text-align: center;
 }
+
 
 
 #heart-button {
@@ -241,6 +282,10 @@ a {
     cursor: pointer;
     position: relative;
     margin-top: 1rem;
+}
+
+#heart-button:hover {
+    transform:scale(1.05);
 }
 
 .heart {
@@ -256,6 +301,7 @@ a {
         transform: translateY(0) translateX(0) scale(1);
         opacity: 1;
     }
+
     100% {
         transform: translateY(-200px) translateX(var(--drift)) scale(0.5);
         opacity: 0;
