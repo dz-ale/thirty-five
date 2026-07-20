@@ -28,7 +28,7 @@ body {
     text-align: center;
     pointer-events: none;
     animation:
-        pulse 2s ease-in-out 4,
+        pulse 2s ease-in-out 2,
         fadeOut 1s ease-in-out 2s forwards;
 }
 
@@ -291,7 +291,7 @@ a {
 }
 
 #heart-button:hover {
-    transform:scale(1.05);
+    transform: scale(1.05);
 }
 
 .heart {
