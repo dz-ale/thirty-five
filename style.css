@@ -29,7 +29,7 @@ body {
     pointer-events: none;
     animation:
         pulse 2s ease-in-out 4,
-        fadeOut 1s ease-in-out 4s forwards;
+        fadeOut 1s ease-in-out 2s forwards;
 }
 
 @keyframes fadeOut {
