@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="50">
+  <mask id="cutout">
+    <rect width="100%" height="100%" fill="white"/>
+    <text x="50%" y="65%" text-anchor="middle" font-size="18" font-weight="bold" fill="black">lass uns feiern!</text>
+  </mask>
+  <rect width="100%" height="100%" fill="white" mask="url(#cutout)"/>
+</svg>
