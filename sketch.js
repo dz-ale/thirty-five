@@ -1,16 +1,25 @@
-
+// Ganz am Anfang deines Scripts
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
-// Zusätzlich sicherstellen, dass der Container bei jedem Laden oben startet
-window.addEventListener('load', () => {
-    const scrollContainer = document.querySelector('.scroll-container'); // oder wie dein Container heißt
+function resetScroll() {
+    const scrollContainer = document.querySelector('.scroll-container');
     if (scrollContainer) {
         scrollContainer.scrollTop = 0;
     }
-});
+}
 
+// Sofort beim Skript-Start ausführen (nicht auf ein Event warten)
+resetScroll();
+
+// Zusätzlich bei "load"
+window.addEventListener('load', resetScroll);
+
+// Zusätzlich bei bfcache-Restore (wichtig für Safari)
+window.addEventListener('pageshow', (event) => {
+    resetScroll();
+});
 
 let x;
 let r, g, b;

@@ -271,6 +271,12 @@ a {
 }
 
 
+@supports (-webkit-touch-callout: none) {
+    .love {
+        margin-bottom: 7rem;
+    }
+}
+
 
 #heart-button {
     padding: 7px 24px;
