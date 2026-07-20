@@ -55,3 +55,34 @@ function windowResized() {
 document.getElementById('feier-button').addEventListener('click', () => {
     document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
 });
+
+
+document.getElementById('heart-button').addEventListener('click', (e) => {
+    createHearts(e.clientX, e.clientY);
+});
+
+function createHearts(x, y) {
+    const heartEmojis = ['❤️', '🩵', '🩷', '💜'];
+
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+
+        // zufällige seitliche Drift-Richtung
+        const drift = (Math.random() - 0.5) * 200;
+        heart.style.setProperty('--drift', drift + 'px');
+
+        // leicht zufällige Größe & Dauer für organischeren Look
+        heart.style.fontSize = (16 + Math.random() * 20) + 'px';
+        heart.style.animationDuration = (1.5 + Math.random()) + 's';
+
+        document.body.appendChild(heart);
+
+        // Element nach der Animation wieder entfernen (Performance!)
+        setTimeout(() => heart.remove(), 2500);
+    }
+}
